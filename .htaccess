@@ -1,0 +1,9 @@
+Options +FollowSymlinks
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !/maintenance.html$
+
+# Make site accessible only by specific IP addresses. Replace xxx with your IP address
+RewriteCond %{REMOTE_HOST} !^xxx\.xxx\.xxx\.xxx
+RewriteCond %{REMOTE_HOST} !^xxx\.xxx\.xxx\.xxx
+
+RewriteRule $ /maintenance.html [R=302,L] 
